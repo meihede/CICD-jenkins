@@ -15,7 +15,7 @@ pipeline {
 
     stage('helloworld') {
       steps {
-        sh 'cat helloworld.py'
+        sh 'helloworld.py'
       }
     }
 
