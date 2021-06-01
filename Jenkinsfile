@@ -13,5 +13,11 @@ pipeline {
       }
     }
 
+    stage('helloworld') {
+      steps {
+        sh 'cat helloworld.py'
+      }
+    }
+
   }
 }
