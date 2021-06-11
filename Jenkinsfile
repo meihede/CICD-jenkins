@@ -1,23 +1,22 @@
 pipeline {
-  agent any
-  stages {
-    stage('check file 1') {
-      steps {
-        sh 'cat file-1.txt'
-      }
-    }
+   agent any
 
-    stage('Check file 2') {
-      steps {
-        sh 'cat file-2.txt'
-      }
-    }
-
-    stage('helloworld') {
-      steps {
-        sh 'helloworld.py'
-      }
-    }
-
+   stages {
+      stage('Build') {
+        steps {
+          echo 'Building...'
+          echo "Running ${env.BUILD_ID} ${env.BUILD_DISPLAY_NAME} on ${env.NODE_NAME} and JOB ${env.JOB_NAME}"
+        }
+   }
+   stage('Test') {
+     steps {
+        echo 'Testing...'
+     }
+   }
+   stage('Deploy') {
+     steps {
+       echo 'Deploying...'
+     }
+   }
   }
 }
